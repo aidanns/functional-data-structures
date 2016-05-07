@@ -1,0 +1,34 @@
+buildscript {
+  repositories {
+    jcenter()
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+
+  dependencies {
+    classpath group: "com.palantir", name: "gradle-baseline-java", version: baselineVersion
+    classpath group: "gradle.plugin.com.palantir", name: "gradle-flexversion", version: flexversionVersion
+  }
+}
+
+apply plugin: "java"
+apply plugin: "idea"
+apply plugin: "eclipse"
+apply plugin: "com.palantir.flexversion"
+apply plugin: 'com.palantir.baseline-config'
+apply plugin: 'com.palantir.baseline-checkstyle'
+apply plugin: 'com.palantir.baseline-eclipse'
+apply plugin: 'com.palantir.baseline-findbugs'
+apply plugin: 'com.palantir.baseline-idea'
+
+version flexVersion()
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+  testCompile group: "junit", name: "junit", version: junitVersion
+  testCompile group: "org.mockito", name: "mockito-all", version: mockitoVersion
+}

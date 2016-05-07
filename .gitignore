@@ -1,1 +1,19 @@
+# Gradle Wrapper.
 .gradle
+
+# Java.
+build
+
+# Baseline.
+.baseline
+.checkstyle
+
+# Eclipse
+.project
+.settings
+.classpath
+
+# IDEA.
+*.ipr
+*.iml
+*.iws
